@@ -13,9 +13,7 @@ application = loadapp("config:%(config)s")
 
 class Recipe(Eggs):
     def __init__(self, buildout, name, options):
-        self.name=name
-        self.options=options
-        self.buildout=buildout
+        super(Recipe, self).__init__(buildout, name, options)
         self.logger=logging.getLogger(self.name)
         
         if "config-file" not in options:
@@ -25,11 +23,6 @@ class Recipe(Eggs):
 
 
     def install(self):
-        # Set some variables to make zc.recipe.egg happy
-        self.options["executable"]=self.buildout["buildout"]["executable"]
-        self.options["eggs-directory"]=self.buildout["buildout"]["eggs-directory"]
-        self.options["develop-eggs-directory"]=self.buildout["buildout"]["develop-eggs-directory"]
-
         reqs,ws=self.working_set()
         path=[pkg.location for pkg in ws]
 
