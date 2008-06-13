@@ -4,6 +4,10 @@ Changelog
 1.0 - Unreleased
 ----------------
 
+
+1.0b2 - June 13, 2008
+---------------------
+
 * Call the Eggs constructor as well: working_set() needs too many of the
   internal variables it sets for us to set them ourselves. This fixes
   the recipe breaking when using find-links in buildout.
