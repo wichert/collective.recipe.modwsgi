@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.0b2'
 
 setup(name='collective.recipe.modwsgi',
       version=version,
@@ -9,8 +9,11 @@ setup(name='collective.recipe.modwsgi',
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
+        "Framework :: Buildout",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
+        "License :: OSI Approved :: Zope Public License",
         "Programming Language :: Python",
-        "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='',
       author='Wichert Akkerman',
