@@ -13,10 +13,13 @@ from paste.deploy import loadapp
 application = loadapp("config:%(config)s")
 """
 
-class Recipe(Eggs):
+class Recipe:
     def __init__(self, buildout, name, options):
-        super(Recipe, self).__init__(buildout, name, options)
+        self.buildout=buildout
+        self.name=name
+        self.options=options
         self.logger=logging.getLogger(self.name)
+
         
         if "config-file" not in options:
             self.logger.error("You need to specify either a paste configuration file")
@@ -25,7 +28,8 @@ class Recipe(Eggs):
 
 
     def install(self):
-        reqs,ws=self.working_set()
+        egg=Eggs(self.buildout, self.options["recipe"], self.options)
+        reqs,ws=egg.working_set()
         path=[pkg.location for pkg in ws]
 
         output=WRAPPER_TEMPLATE % dict(

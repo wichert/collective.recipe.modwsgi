@@ -4,6 +4,10 @@ Changelog
 1.0 - Unreleased
 ----------------
 
+* Do not make the recipe a subclass of zc.recipe.egg.Eggs but
+  use a local instance to determine the working set.
+  [wichert]
+
 * Format the sys.path changes in the wrapper to make it more
   human readable. This is purely cosmetic to help with debugging.
   [wichert]
