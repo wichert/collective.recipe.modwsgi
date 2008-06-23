@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0 - Unreleased
-----------------
+1.0b3 - June 23, 2008
+---------------------
 
 * Do not make the recipe a subclass of zc.recipe.egg.Eggs but
   use a local instance to determine the working set.
