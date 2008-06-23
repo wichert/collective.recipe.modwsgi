@@ -4,6 +4,11 @@ Changelog
 1.0 - Unreleased
 ----------------
 
+* Also recreate the wsgi wrapper file when updating a buildout part.
+  This is needed to get get changes to versions in the working set
+  (such as different version pins) reflected in the wrapper.
+  [wichert]
+
 
 1.0b2 - June 13, 2008
 ---------------------

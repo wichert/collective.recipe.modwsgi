@@ -48,5 +48,5 @@ class Recipe(Eggs):
 
 
     def update(self):
-        pass
+        self.install()
 
