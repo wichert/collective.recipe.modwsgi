@@ -5,7 +5,9 @@ from zc.recipe.egg.egg import Eggs
 
 WRAPPER_TEMPLATE = """\
 import sys
-sys.path[0:0]=%(syspath)s
+sys.path[0:0]= [
+    %(syspath)s,
+    ]
 
 from paste.deploy import loadapp
 application = loadapp("config:%(config)s")
@@ -28,7 +30,7 @@ class Recipe(Eggs):
 
         output=WRAPPER_TEMPLATE % dict(
             config=self.options["config-file"],
-            syspath=repr(path)
+            syspath=",\n    ".join((repr(p) for p in path))
             )
 
         location=os.path.join(self.buildout["buildout"]["parts-directory"],

@@ -4,6 +4,10 @@ Changelog
 1.0 - Unreleased
 ----------------
 
+* Format the sys.path changes in the wrapper to make it more
+  human readable. This is purely cosmetic to help with debugging.
+  [wichert]
+
 * Also recreate the wsgi wrapper file when updating a buildout part.
   This is needed to get get changes to versions in the working set
   (such as different version pins) reflected in the wrapper.
