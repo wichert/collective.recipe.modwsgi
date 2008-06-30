@@ -4,6 +4,11 @@ Changelog
 1.0 - Unreleased
 ----------------
 
+
+
+1.0rc1 - June 30, 2008
+----------------------
+
 * Update the generated wrapper to test if a path is already in sys.path
   before adding it. This prevents paths being duplicated in sys.path
   when mod_wsgi reloads the module.
