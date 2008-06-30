@@ -5,9 +5,14 @@ from zc.recipe.egg.egg import Eggs
 
 WRAPPER_TEMPLATE = """\
 import sys
-sys.path[0:0]= [
+syspaths = [
     %(syspath)s,
     ]
+
+for path in reversed(syspaths):
+    if path not in sys.path:
+        sys.path[0:0]=[path]
+
 
 from paste.deploy import loadapp
 application = loadapp("config:%(config)s")
