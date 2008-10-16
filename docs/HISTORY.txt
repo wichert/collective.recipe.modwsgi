@@ -1,8 +1,11 @@
 Changelog
 =========
 
-1.0 - Unreleased
-----------------
+1.0 - October 16, 2008
+----------------------
+
+* No changes.
+  [wichert]
 
 
 
@@ -33,6 +36,7 @@ Changelog
   [wichert]
 
 
+
 1.0b2 - June 13, 2008
 ---------------------
 
@@ -40,6 +44,7 @@ Changelog
   internal variables it sets for us to set them ourselves. This fixes
   the recipe breaking when using find-links in buildout.
   [wichert]
+
 
 
 1.0b1 - June 13, 2008
