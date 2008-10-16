@@ -16,7 +16,7 @@ which creates a WSGI script mod_python can use::
     config-file = ${buildout:directory}/production.ini
 
 This will create a small python script in parts/mywsgiapp called
-''wsgi'' which mod_python can load.
+''wsgi'' which mod_wsgi can load.
 
 The apache configuration for this buildout looks like this:::
 
