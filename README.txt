@@ -16,7 +16,9 @@ which creates a WSGI script mod_python can use::
     config-file = ${buildout:directory}/production.ini
 
 This will create a small python script in parts/mywsgiapp called
-''wsgi'' which mod_wsgi can load.
+''wsgi'' which mod_wsgi can load. You can also use the optional
+''extra-paths'' option to specify extra paths that are added to
+the python system path.
 
 The apache configuration for this buildout looks like this:::
 
@@ -29,12 +31,10 @@ The apache configuration for this buildout looks like this:::
 
 This recipe does not fully install packages, which means that console scripts
 will not be created. If you need console scripts you can add a second
-buildout part which uses `zc.recipe.egg`_ or `repoze.recipe.egg`_ to do
-a full install.
+buildout part which uses `zc.recipe.egg`_ to do a full install.
 
 .. _zc.buildout: http://pypi.python.org/pypi/zc.buildout
 .. _paste.deploy: http://pythonpaste.org/deploy/
 .. _mod_wsgi: http://code.google.com/p/modwsgi/
 .. _zc.recipe.egg: http://pypi.python.org/pypi/zc.recipe.egg
-.. _repoze.recipe.egg: http://pypi.python.org/pypi/repoze.recipe.egg
 

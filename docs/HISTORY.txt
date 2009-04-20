@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.1 - April 20, 2009
+--------------------
+
+* Add an 'extra-paths' option, similar the the zc.recipe.egg one.
+  [chrism]
+
+
 1.0 - October 16, 2008
 ----------------------
 

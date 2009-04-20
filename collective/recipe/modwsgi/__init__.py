@@ -36,6 +36,9 @@ class Recipe:
         egg=Eggs(self.buildout, self.options["recipe"], self.options)
         reqs,ws=egg.working_set()
         path=[pkg.location for pkg in ws]
+        extra_paths = self.options.get('extra-paths', '')
+        extra_paths = extra_paths.split()
+        path.extend(extra_paths)
 
         output=WRAPPER_TEMPLATE % dict(
             config=self.options["config-file"],
