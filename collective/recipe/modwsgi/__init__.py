@@ -15,7 +15,11 @@ for path in reversed(syspaths):
 
 
 from paste.deploy import loadapp
-application = loadapp("config:%(config)s")
+from paste.script.util.logging_config import fileConfig
+
+configfile="%(config)s"
+fileConfig(configfile)
+application = loadapp("config:" + configfile)
 """
 
 class Recipe:

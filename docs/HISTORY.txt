@@ -4,6 +4,11 @@ Changelog
 1.2 - unreleased
 ----------------
 
+- Initialise the python logging module. Based on a patch from Philip Kershaw,
+  which was based on a discussion on pylons-discuss:
+  http://groups.google.com/group/pylons-discuss/browse_thread/thread/9b9add4529b3779c?pli=1
+  [wichert]
+
 
 1.1 - April 20, 2009
 --------------------
