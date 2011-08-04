@@ -1,5 +1,6 @@
 import logging
 import os
+import stat
 import zc.buildout
 from zc.recipe.egg.egg import Eggs
 
@@ -59,7 +60,9 @@ class Recipe:
         f=open(target, "wt")
         f.write(output)
         f.close()
-        os.chmod(target, 0755)
+
+        exec_mask=stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+        os.chmod(target, os.stat(target).st_mode | exec_mask)
         self.options.created(target)
 
         return self.options.created()
