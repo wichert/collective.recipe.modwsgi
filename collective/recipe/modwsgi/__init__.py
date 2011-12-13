@@ -16,7 +16,12 @@ for path in reversed(syspaths):
 
 
 from paste.deploy import loadapp
-from paste.script.util.logging_config import fileConfig
+
+if sys.version_info >= (2, 6):
+    from logging.config import fileConfig
+else:
+    from paste.script.util.logging_config import fileConfig
+
 
 configfile="%(config)s"
 fileConfig(configfile)
