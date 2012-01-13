@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.3 - unreleased
-----------------
+1.3 - January 13, 2012
+----------------------
 
 - Gracefully handle .ini files that do not contain logging configuration.
   [wichert]
