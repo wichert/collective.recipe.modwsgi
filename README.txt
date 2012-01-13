@@ -31,10 +31,10 @@ The apache configuration for this buildout looks like this:::
 
 This recipe does not fully install packages, which means that console scripts
 will not be created. If you need console scripts you can add a second
-buildout part which uses `zc.recipe.egg`_ to do a full install.
+buildout part which uses `z3c.recipe.scripts`_ to do a full install.
 
 .. _zc.buildout: http://pypi.python.org/pypi/zc.buildout
 .. _paste.deploy: http://pythonpaste.org/deploy/
 .. _mod_wsgi: http://code.google.com/p/modwsgi/
-.. _zc.recipe.egg: http://pypi.python.org/pypi/zc.recipe.egg
+.. _z3c.recipe.scripts: http://pypi.python.org/pypi/z3c.recipe.scripts
 
