@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+/collective.recipe.modwsgi.egg-info
+/build
+/dist
