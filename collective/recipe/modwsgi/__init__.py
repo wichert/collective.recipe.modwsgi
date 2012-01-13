@@ -5,6 +5,7 @@ import zc.buildout
 from zc.recipe.egg.egg import Eggs
 
 WRAPPER_TEMPLATE = """\
+import ConfigParser
 import sys
 syspaths = [
     %(syspath)s,
@@ -23,8 +24,11 @@ else:
     from paste.script.util.logging_config import fileConfig
 
 
-configfile="%(config)s"
-fileConfig(configfile)
+configfile = "%(config)s"
+try:
+    fileConfig(configfile)
+except ConfigParser.NoSectionError:
+    pas
 application = loadapp("config:" + configfile)
 """
 
