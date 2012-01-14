@@ -28,7 +28,7 @@ configfile = "%(config)s"
 try:
     fileConfig(configfile)
 except ConfigParser.NoSectionError:
-    pas
+    pass
 application = loadapp("config:" + configfile)
 """
 
