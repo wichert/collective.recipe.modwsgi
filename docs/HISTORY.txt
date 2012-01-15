@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.4 - Unreleased
-----------------
+1.4 - January 15, 2012
+----------------------
 
 - Fix typo in the .ini handling logic for configuration files that do not
   contain logging settings.
