@@ -4,7 +4,9 @@ Changelog
 1.4 - Unreleased
 ----------------
 
-- ...
+- Fix typo in the .ini handling logic for configuration files that do not
+  contain logging settings.
+  [aclark]
 
 
 1.3 - January 13, 2012
