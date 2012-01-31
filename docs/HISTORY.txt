@@ -1,10 +1,10 @@
 Changelog
 =========
 
-1.6 - Unreleased
-----------------
+1.6 - January 31, 2012
+----------------------
 
-- ...
+- Fix packaging error.
 
 
 1.5 - January 31, 2012

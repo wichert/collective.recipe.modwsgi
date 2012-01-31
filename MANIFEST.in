@@ -1,1 +1,2 @@
 graft docs
+include README.rst
