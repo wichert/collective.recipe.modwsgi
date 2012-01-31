@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.5 - Unreleased
-----------------
+1.5 - January 31, 2012
+----------------------
 
 - Add option to configure which application to load from a .ini file.
   Patch submitted by Stephan Hof.
