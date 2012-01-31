@@ -6,7 +6,7 @@ version = '1.5dev'
 setup(name='collective.recipe.modwsgi',
       version=version,
       description='WSGI from buildout',
-      long_description=open('README.txt').read() + '\n' +
+      long_description=open('README.rst').read() + '\n' +
                        open(os.path.join('docs', 'HISTORY.txt')).read(),
       classifiers=[
         'Development Status :: 5 - Production/Stable',
