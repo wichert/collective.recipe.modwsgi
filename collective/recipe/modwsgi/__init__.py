@@ -29,7 +29,7 @@ try:
     fileConfig(configfile)
 except ConfigParser.NoSectionError:
     pass
-application = loadapp("config:" + configfile)
+application = loadapp("config:" + configfile, name=%(app_name)s)
 """
 
 
@@ -53,9 +53,16 @@ class Recipe:
         extra_paths = extra_paths.split()
         path.extend(extra_paths)
 
+        # Do not put None into 'quotes'
+        # Everything else should be a string pointing to a pipeline
+        app_name = self.options.get('app_name')
+        if app_name is not None:
+            app_name = '"%s"' % app_name
+
         output = WRAPPER_TEMPLATE % dict(
             config=self.options["config-file"],
-            syspath=",\n    ".join((repr(p) for p in path))
+            syspath=",\n    ".join((repr(p) for p in path)),
+            app_name=app_name
             )
 
         location = os.path.join(self.buildout["buildout"]["parts-directory"],

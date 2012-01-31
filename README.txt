@@ -13,6 +13,7 @@ which creates a WSGI script mod_python can use::
     [mywsgiapp]
     recipe = collective.recipe.modwsgi
     eggs = mywsgiapp
+    app_name = main
     config-file = ${buildout:directory}/production.ini
 
 This will create a small python script in parts/mywsgiapp called
