@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.7 - Unreleased
-----------------
+1.7 - June 19, 2012
+-------------------
 
 - Add option to configure where target script will be created.
   Patch submitted by David Convent.
