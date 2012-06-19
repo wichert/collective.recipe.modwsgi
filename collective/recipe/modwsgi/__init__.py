@@ -45,6 +45,14 @@ class Recipe:
                     "You need to specify either a paste configuration file")
             raise zc.buildout.UserError("No paste configuration given")
 
+        if "target" in options:
+            location = os.path.dirname(options["target"])
+            if not os.path.isdir(location):
+                self.logger.error(
+                    "The 'target' option refers to a directory that is not "
+                    "valid: %s" % location)
+                raise zc.buildout.UserError("Invalid directory for target")
+
     def install(self):
         egg = Eggs(self.buildout, self.options["recipe"], self.options)
         reqs, ws = egg.working_set()
@@ -65,13 +73,18 @@ class Recipe:
             app_name=app_name
             )
 
-        location = os.path.join(self.buildout["buildout"]["parts-directory"],
-                              self.name)
-        if not os.path.exists(location):
-            os.mkdir(location)
-            self.options.created(location)
+        target = self.options.get("target")
+        if target is None:
+            location = os.path.join(
+                            self.buildout["buildout"]["parts-directory"],
+                            self.name)
+            if not os.path.exists(location):
+                os.mkdir(location)
+                self.options.created(location)
+            target = os.path.join(location, "wsgi")
+        else:
+            self.options.created(target)
 
-        target = os.path.join(location, "wsgi")
         f = open(target, "wt")
         f.write(output)
         f.close()
