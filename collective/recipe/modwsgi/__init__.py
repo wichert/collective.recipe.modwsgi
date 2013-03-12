@@ -5,7 +5,10 @@ import zc.buildout
 from zc.recipe.egg.egg import Eggs
 
 WRAPPER_TEMPLATE = """\
-import ConfigParser
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
 import sys
 syspaths = [
     %(syspath)s,
@@ -27,13 +30,13 @@ else:
 configfile = "%(config)s"
 try:
     fileConfig(configfile)
-except ConfigParser.NoSectionError:
+except configparser.NoSectionError:
     pass
 application = loadapp("config:" + configfile, name=%(app_name)s)
 """
 
 
-class Recipe:
+class Recipe(object):
     def __init__(self, buildout, name, options):
         self.buildout = buildout
         self.name = name
