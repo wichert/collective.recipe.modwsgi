@@ -1,10 +1,10 @@
 Changelog
 =========
 
-1.8 - Unreleased
+2.0 - Unreleased
 ----------------
 
-- ...
+- Add Python 3 support. Patch submitted by Richard Mitchell. 
 
 
 1.7 - June 19, 2012
