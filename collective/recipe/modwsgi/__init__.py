@@ -77,6 +77,7 @@ class Recipe(object):
             )
 
         target = self.options.get("target")
+
         if target is None:
             location = os.path.join(
                             self.buildout["buildout"]["parts-directory"],
@@ -86,11 +87,15 @@ class Recipe(object):
                 self.options.created(location)
             target = os.path.join(location, "wsgi")
         else:
-            self.options.created(target)
+            if os.path.lexists(target) and not os.path.exists(target):
+                # Can't write to a broken symlink, so remove it
+                os.unlink(target)
 
         f = open(target, "wt")
-        f.write(output)
-        f.close()
+        try:
+            f.write(output)
+        finally:
+            f.close()
 
         exec_mask = stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
         os.chmod(target, os.stat(target).st_mode | exec_mask)
