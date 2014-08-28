@@ -4,7 +4,8 @@ Changelog
 2.1 - Unreleased
 --------------------
 
-- ...
+- Handle broken symlinks when using the target option. Patch submitted by
+  Jaap Roes.
 
 
 2.0 - March 12, 2013
